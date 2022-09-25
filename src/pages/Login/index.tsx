@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Inputs } from "../../Components/Inputs";
 import { corSecundaria } from "../../Components/UI/variaveis";
+import mask from "../../assets/mask.svg";
 
 const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
   display: flex;
+  justify-content: center;
+  
   height: 100vh;
 `;
 
@@ -30,7 +33,14 @@ const Titulo = styled.h1`
 
 const Welcome = styled.div`
   margin-bottom: 135px;
-`
+`;
+
+const ImgPc = styled.div`
+  background-image: url(${mask});
+  background-repeat: no-repeat;
+  width: 60vw;
+  height: 100vh;
+`;
 
 function Login() {
   return (
@@ -46,7 +56,7 @@ function Login() {
           <Inputs />
         </form>
       </Cadastro>
-      <div></div>
+      <ImgPc />
     </Fundo>
   );
 }
