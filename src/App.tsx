@@ -1,14 +1,13 @@
 import React from 'react';
-import './App.css';
+import { GlobalStyle } from './Components/GlobalStyles';
+import Login from './pages/Login';
 
 function App() {
   return (
-    <div>
-      <header>
-        <img />
-        <p></p>
-      </header>
-    </div>
+    <>
+    <GlobalStyle />
+    <Login/>
+    </>
   );
 }
 

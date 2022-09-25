@@ -1,1 +1,0 @@
-export const corGradiente = "linear-gradient(180deg, #33383D 0%, #1C1D20 100%);"
