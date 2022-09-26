@@ -2,20 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { Inputs } from "../../Components/Inputs";
 import { corSecundaria } from "../../Components/UI/variaveis";
+import { Button } from "../../Components/UI";
 import mask from "../../assets/mask.svg";
 
 const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
   display: flex;
-  justify-content: center;
-  
   height: 100vh;
+  margin: 0 auto;
 `;
 
 const Cadastro = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
 `;
 
 const Text = styled.p`
@@ -23,6 +24,7 @@ const Text = styled.p`
   font-size: 1rem;
   line-height: 1.266rem;
   color: ${corSecundaria};
+  width: 18.813rem;
 `;
 
 const Titulo = styled.h1`
@@ -38,7 +40,8 @@ const Welcome = styled.div`
 const ImgPc = styled.div`
   background-image: url(${mask});
   background-repeat: no-repeat;
-  width: 60vw;
+  background-size: cover;
+  width: 50vw;
   height: 100vh;
 `;
 
@@ -55,6 +58,7 @@ function Login() {
         <form>
           <Inputs />
         </form>
+        <Button>Começar</Button>
       </Cadastro>
       <ImgPc />
     </Fundo>
