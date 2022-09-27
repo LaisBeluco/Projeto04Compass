@@ -1,6 +1,7 @@
 import React from "react";
 import * as E from "./styled";
 import Timer from "../../Components/Timer";
+import Logout from "../../Components/Logout";
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
         <E.Footer>
           <E.TextFooter>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</E.TextFooter>
           <Timer/>
+          <Logout/>
         </E.Footer>
     </>
   );

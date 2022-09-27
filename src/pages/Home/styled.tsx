@@ -19,7 +19,7 @@ export const Img = styled.div`
 `;
 
 export const Content = styled.div`
-  margin: 0 auto;
+  margin: 0 5% 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
