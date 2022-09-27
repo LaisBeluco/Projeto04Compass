@@ -8,5 +8,5 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
 }
 
 export default function Input({label, variant = "user", ...rest}: InputProps){
-
+  
 }
