@@ -1,10 +1,13 @@
 import React from "react";
+import { Header, Img } from "./styled";
 
 function Home() {
   return (
-    <div>
-      <h1>Olá</h1>
-    </div>
+    <>
+        <Header>
+          <Img/>
+        </Header>
+    </>
   );
 }
 

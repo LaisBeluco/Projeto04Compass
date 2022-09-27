@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Inputs } from "../../Components/Inputs";
+import  Form  from "../../Components/Form";
 import { corSecundaria } from "../../Components/UI/variaveis";
-import { Button } from "../../Components/UI";
 import mask from "../../assets/mask.svg";
+import { useNavigate } from "react-router-dom";
 
 const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
@@ -45,7 +45,7 @@ const ImgPc = styled.div`
   height: 100vh;
 `;
 
-function Login() {
+export function Login() {
   return (
     <Fundo>
       <Cadastro>
@@ -55,10 +55,7 @@ function Login() {
             Para continuar navegando de forma segura, efetue o login na rede.
           </Text>
         </Welcome>
-        <form>
-          <Inputs />
-        </form>
-        <Button>Começar</Button>
+        <Form/>
       </Cadastro>
       <ImgPc />
     </Fundo>

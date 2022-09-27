@@ -3,12 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 
-// const Private = ({ Item }) => {
-//   const login = false;
-
-//   return login ? <Item /> : <Login />;
-// };
-
 const RoutesApp = () => {
   return (
     <BrowserRouter>
