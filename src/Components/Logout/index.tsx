@@ -6,11 +6,11 @@ export default function Logout() {
     <>
       <E.ContainerLog>
         <E.BlockLog>
-          <E.Nav>
+          <E.Nav href="https://www.google.com.br/" target="_blank">
             Continuar <br /> Navegando
           </E.Nav>
         </E.BlockLog>
-        <E.LogOut>Logout</E.LogOut>
+        <E.LogOut href="http://localhost:3000/">Logout</E.LogOut>
       </E.ContainerLog>
     </>
   );

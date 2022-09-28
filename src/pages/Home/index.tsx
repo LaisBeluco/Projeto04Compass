@@ -12,6 +12,7 @@ function Home() {
         <E.Header>
           <E.Img />
           <Day />
+          <E.ImgFixo/>
         </E.Header>
         <E.Content>
           <E.ImgCompass src={ballCompass} />

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import ballCompass from "../../assets/bolaCompass.svg";
 import LogoCompasso from "../../assets/LogoCompasso.svg";
+import Temperatura from "../../assets/temperatura.png";
+
 
 export const Back = styled.div`
   /* height: 100vh; */
@@ -10,14 +11,23 @@ export const Header = styled.header`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  align-items: center;
 `;
 
 export const Img = styled.div`
   background-image: url(${LogoCompasso});
+  background-repeat: no-repeat;
+  margin: 25px 0 0 40px;
   width: 9.375rem;
   height: 2.672rem;
 `;
+
+export const ImgFixo = styled.div`
+  background-image: url(${Temperatura});
+  background-repeat: no-repeat;
+  margin: 25px 40px 0 0 ;
+  width: 9.375rem;
+  height: 4.2rem;
+`
 
 export const Content = styled.div`
   margin: 0 5% 0 0;

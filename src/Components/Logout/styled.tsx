@@ -14,6 +14,7 @@ export const Nav = styled.a`
   align-items: center;
   color: #c13216;
   font-size: 0.75rem;
+  cursor: pointer;
 `;
 
 export const LogOut = styled.a`
