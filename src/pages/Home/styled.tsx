@@ -51,7 +51,7 @@ export const Footer = styled.footer`
   background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
   display: flex;
   align-items: center;
-  justify-content: center;
+justify-content: right;
   height: 6.25rem;
   width: 100%;
 `;

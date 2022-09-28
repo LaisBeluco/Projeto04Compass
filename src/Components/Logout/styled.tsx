@@ -18,8 +18,16 @@ export const Nav = styled.a`
 
 export const LogOut = styled.a`
   text-decoration: none;
+  display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: 700;
   font-size: 0.75rem;
+  width: 8.188rem;
   color: #FFFFFF;
+`
+export const ContainerLog = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
