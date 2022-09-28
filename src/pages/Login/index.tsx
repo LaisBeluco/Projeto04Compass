@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import  Form  from "../../Components/Form";
 import { corSecundaria } from "../../Components/UI/variaveis";
-import mask from "../../assets/mask.svg";
+import mask from "../../assets/mask.png";
 import { useNavigate } from "react-router-dom";
 
 const Fundo = styled.div`

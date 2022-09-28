@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 
