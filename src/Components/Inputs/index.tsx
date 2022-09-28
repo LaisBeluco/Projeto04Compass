@@ -25,9 +25,10 @@ export default function Input({
         onFocus={() => setClickUser(true)}
         onBlur={(event) =>
           event.target.value.length > 0 ? setClickUser(true) : setClickUser(false)}
+
       />
       <E.Icon click={click}>
-        {/* {type === name ? (<AiOutlineUser size={20}/>) : (<MdLockOutline size={20}/>)} */}
+        {/* {type === "name" ? (<AiOutlineUser size={20}/>) : (<MdLockOutline size={20}/>)} */}
       </E.Icon>
     </div>
   );
