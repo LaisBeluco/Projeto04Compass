@@ -1,32 +1,62 @@
-import React from "react";
-// import { useNavigate } from "react-router";
+import React, { Component } from "react";
+import CompassWeader from "../../assets/CompassClound.png";
+import moment from "moment";
 
-// const navigator = useNavigate();
+class App extends Component {
+  state = {
+    lat: undefined,
+    lon: undefined,
+    city: undefined,
+    temperatureC: undefined,
+    temperatureF: undefined,
+    errorMessage: undefined,
+  };
 
-// module.exports = {
-//   key: "{60e2687dceced020cd1d3f3525ed4644}",
-//   base: "https://api.openweathermap.org/data/2.5/",
-// }
+  getPosition = () => {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  };
 
-// if (navigator.geolocation){
-//   this.getPosition()
-//   .then((position: any)=> {
-//     this.getWeather(position.coords.latitude, position.coords.longitude);
-//   });
-// }else{
-//   alert("Geolocation not available");
-// }
-
-navigator.geolocation.getCurrentPosition( 
-  (position) => { 
-    console.log('latitude is: ', position.coords.latitude); 
-    console.log('longitude is: ', position.coords.longitude); 
-  } 
-);
-// getPosition = () => { 
-//   return new Promise(função (resolver, rejeitar) { 
-//     navigator.geolocation.getCurrentPosition(resolver, rejeitar); 
-//   }); 
-// }
-
-// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={60e2687dceced020cd1d3f3525ed4644}
+  getWeather = async (latitude: number, longitude: number) => {
+    const api_call = await fetch(
+      `//api.openweathermap.org/data/2.5/weather?lat=${latitude} &lon= ${longitude} &appid= ${process.env.REACT_APP_WEATHER_API_KEY} &units=metric`
+    );
+    const data = await api_call.json();
+    this.setState({
+      lat: latitude,
+      lon: longitude,
+      city: data.name,
+      temperatureC: Math.round(data.main.temp),
+      temperatureF: Math.round(data.main.temp * 1.8 + 32),
+      icon: data.wether[0].icon,
+      sunrise: moment.unix(data.sys.sunrise).format("hh:mm a"),
+      sunset: moment.unix(data.sys.sunset).format("hh:mm a"),
+    });
+  };
+  componentDidMount() {
+    this.getPosition()
+      .then((position: any) => {
+        this.getWeather(position.coords.latitude, position.coords.longitude);
+      })
+      .catch((err) => {
+        this.setState({ errerMessage: err.message });
+      });
+  }
+  render() {
+    const { city, temperatureC } = this.state;
+    if(city){
+      return(
+      <>
+      <div>
+        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      </>)
+    }
+  }
+}
+export default App;

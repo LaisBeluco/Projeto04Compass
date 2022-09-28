@@ -12,6 +12,5 @@ export const Button = styled.button`
   height: 4.188rem;
   font-size: 1.125rem;
   color: ${corPrimaria};
-  margin-top: 9.688rem;
   cursor: pointer;
 `;
