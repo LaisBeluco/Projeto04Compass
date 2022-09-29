@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React from "react";
 import styled from "styled-components";
 import { corPrimaria } from "../UI/variaveis";
 import { corSecundaria } from "../UI/variaveis";
@@ -6,8 +6,6 @@ import { useState } from "react";
 import { Button } from "../UI";
 import { useNavigate } from "react-router-dom";
 import * as E from "./styled";
-import { AiOutlineUser } from "react-icons/ai";
-import { HiOutlineLockClosed } from "react-icons/hi";
 
 const UserRegistration = styled.form`
   display: flex;
@@ -68,11 +66,6 @@ export default function Form() {
     } else {
       return setNoValidated(true);
     }
-  }
-
-  interface props {
-    email: String;
-    senha: String;
   }
 
   return (

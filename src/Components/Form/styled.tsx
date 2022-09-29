@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdLockOutline } from "react-icons/md";
 import iconPass from "../../assets/icon-password.png";
 import iconUser from "../../assets/icon-user.png";
 
