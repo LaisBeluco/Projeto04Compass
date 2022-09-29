@@ -5,6 +5,7 @@ export const Climate = styled.div`
   display: flex;
   flex-direction: column;
   margin: 25px 40px 0 0;
+  width: 7.563rem;
 `;
 
 export const Location = styled.p`

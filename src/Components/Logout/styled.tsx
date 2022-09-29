@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BlockLog = styled.div`
   background: #ffffff;
   text-align: center;
-  height: 6.188rem;
+  height: 6.25rem;
   width: 8.188rem;
   display: flex;
   align-items: center;
