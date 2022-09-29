@@ -2,7 +2,6 @@ import styled from "styled-components";
 import LogoCompasso from "../../assets/LogoCompasso.svg";
 import Temperatura from "../../assets/temperatura.png";
 
-
 export const Back = styled.div`
   /* height: 100vh; */
 `;
@@ -24,10 +23,10 @@ export const Img = styled.div`
 export const ImgFixo = styled.div`
   background-image: url(${Temperatura});
   background-repeat: no-repeat;
-  margin: 25px 40px 0 0 ;
+  margin: 25px 40px 0 0;
   width: 9.375rem;
   height: 4.2rem;
-`
+`;
 
 export const Content = styled.div`
   margin: 0 5% 0 0;
@@ -46,22 +45,23 @@ export const ImgCompass = styled.img`
   width: 45vw;
 `;
 export const TextEnglish = styled.h1`
-  color: #c12d18;
+  color:#C12D18;
   font-weight: 700;
   font-size: 3rem;
-  line-height: 5.07rem;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.40rem;
+`;
+
+export const TextPortugueseSpan = styled.span`
+  color: #222222;
+  font-size: 1.5rem;
   text-align: right;
 `;
 
 export const TextEnglishSmall = styled(TextEnglish)`
   font-size: 2.25rem;
-`
-
-export const TextPortuguese = styled.h2`
-  color: #222222;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  text-align: right;
 `;
 
 export const Footer = styled.footer`

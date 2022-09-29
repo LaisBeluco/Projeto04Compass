@@ -12,7 +12,7 @@ export const Location = styled.p`
   color: #222222;
   font-size: 0.875rem;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
 `;
 
 export const Temperature = styled.div`
@@ -24,6 +24,7 @@ export const IconClimate = styled.i`
   width: 34px;
   height: 34px;
   align-self: center;
+  margin-right: 0.75rem;
 `;
 
 export const TemperaturaNumber = styled.div`

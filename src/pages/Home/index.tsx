@@ -18,18 +18,12 @@ function Home() {
         <E.Content>
           <E.ImgCompass src={ballCompass} />
           <div>
-            <E.TextEnglishSmall>Our mission is</E.TextEnglishSmall>
-            <E.TextPortuguese>Nossa missão é</E.TextPortuguese>
-            <E.TextEnglish>to transform the word</E.TextEnglish>
-            <E.TextPortuguese>transformar o mundo</E.TextPortuguese>
-            <E.TextEnglish>building digital experiences</E.TextEnglish>
-            <E.TextPortuguese>
-              construindo experiências digitais
-            </E.TextPortuguese>
-            <E.TextEnglish>that enable our client’s growth</E.TextEnglish>
-            <E.TextPortuguese>
-              que permitam o crescimento dos nossos clientes
-            </E.TextPortuguese>
+            <E.TextEnglishSmall>
+              Our mission is <E.TextPortugueseSpan>Nossa missão é</E.TextPortugueseSpan>{" "}
+            </E.TextEnglishSmall>
+            <E.TextEnglish>to transform the word <E.TextPortugueseSpan>transformar o mundo</E.TextPortugueseSpan></E.TextEnglish>
+            <E.TextEnglish>building digital experiences <E.TextPortugueseSpan>construindo experiências digitais</E.TextPortugueseSpan></E.TextEnglish>
+            <E.TextEnglish>that enable our client’s growth <E.TextPortugueseSpan>que permitam o crescimento dos nossos clientes</E.TextPortugueseSpan></E.TextEnglish>
           </div>
         </E.Content>
       </E.Back>
