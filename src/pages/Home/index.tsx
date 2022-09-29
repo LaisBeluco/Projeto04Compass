@@ -4,6 +4,7 @@ import Timer from "../../Components/Timer";
 import Logout from "../../Components/Logout";
 import { Day } from "../../Components/Day";
 import ballCompass from "../../assets/bolaCompass.svg";
+import Weader from "../../Components/Weather";
 
 function Home() {
   return (
@@ -12,11 +13,12 @@ function Home() {
         <E.Header>
           <E.Img />
           <Day />
-          <E.ImgFixo/>
+          <Weader />
         </E.Header>
         <E.Content>
           <E.ImgCompass src={ballCompass} />
           <div>
+            <E.TextEnglishSmall>Our mission is</E.TextEnglishSmall>
             <E.TextPortuguese>Nossa missão é</E.TextPortuguese>
             <E.TextEnglish>to transform the word</E.TextEnglish>
             <E.TextPortuguese>transformar o mundo</E.TextPortuguese>

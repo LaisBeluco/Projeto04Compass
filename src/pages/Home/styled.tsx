@@ -53,6 +53,10 @@ export const TextEnglish = styled.h1`
   text-align: right;
 `;
 
+export const TextEnglishSmall = styled(TextEnglish)`
+  font-size: 2.25rem;
+`
+
 export const TextPortuguese = styled.h2`
   color: #222222;
   font-size: 1.5rem;
