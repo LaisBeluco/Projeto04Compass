@@ -1,5 +1,4 @@
-import { clear } from "console";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import * as E from "./styled";
 
@@ -7,7 +6,7 @@ import * as E from "./styled";
 export default function Timer() {
   const navigate = useNavigate();
 
-  const [totalTimeInsoconds, setTimeInsoconds] = useState(600);
+  const [totalTimeInsoconds, setTimeInsoconds] = useState(60);
   const seconds = totalTimeInsoconds;
 
   useEffect(() => {

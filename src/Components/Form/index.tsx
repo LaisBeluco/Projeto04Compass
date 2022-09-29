@@ -27,6 +27,9 @@ const Input = styled.input<{ NoValidated: any }>`
   font-size: 1rem;
   padding: 1.25rem;
   color: ${corSecundaria};
+  ::placeholder{
+    color: #E0E0E0;
+  }
 `;
 
 const ReistrationTexLogin = styled.h2`
@@ -78,7 +81,7 @@ export default function Form() {
       <div style={{ position: "relative" }}>
         <Input
           NoValidated={NoValidated}
-          type="string"
+          type="text"
           id="email"
           name="email"
           required
@@ -116,9 +119,3 @@ export default function Form() {
     </UserRegistration>
   );
 }
-
-// function setNoValidated(test: boolean) {
-//   if (test) {
-//     console.log("Não foi alguma coisa!");
-//   }
-// }

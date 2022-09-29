@@ -5,7 +5,8 @@ import mask from "../../assets/mask.png";
 export const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
   display: flex;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 `;
 
