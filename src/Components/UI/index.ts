@@ -13,4 +13,13 @@ export const Button = styled.button`
   font-size: 1.125rem;
   color: ${corPrimaria};
   cursor: pointer;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  @media (max-width: 360px) {
+    width: 100%;
+  }
+  @media (max-width: 280px) {
+    font-size: 1rem;
+  }
 `;

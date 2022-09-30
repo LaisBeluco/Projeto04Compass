@@ -1,10 +1,15 @@
 import React from "react";
 import * as E from "./styled";
 import Form from "../../Components/Form";
+import mask from "../../assets/mask.png";
+import logoMobile from "../../assets/logoMobile.png";
 
 export function Login() {
   return (
     <E.Fundo>
+        <E.ContainerLogoMobile>
+          <E.ImgLogoMobile src={logoMobile} />
+        </E.ContainerLogoMobile>
       <E.Cadastro>
         <E.Welcome>
           <E.Titulo>Olá,</E.Titulo>
@@ -14,7 +19,7 @@ export function Login() {
         </E.Welcome>
         <Form />
       </E.Cadastro>
-      <E.ImgPc />
+      <E.ImgPc src={mask} />
     </E.Fundo>
   );
 }

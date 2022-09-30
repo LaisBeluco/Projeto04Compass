@@ -20,6 +20,7 @@ export const Icon = styled.i<IconI>`
   margin-left: ${({ transition }: any) => (transition ? "-40px" : "20px")};
   background-image: url(${({ user }: any) => (user ? iconUser : iconPass)});
   background-repeat: no-repeat;
+  display: inline-block;
   position: absolute;
   transition: 1s;
   top: 15px;

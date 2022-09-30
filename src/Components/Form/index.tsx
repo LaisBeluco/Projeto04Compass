@@ -12,6 +12,7 @@ const UserRegistration = styled.form`
   flex-direction: column;
   height: 25.313rem;
   justify-content: space-between;
+  margin-right: 50px;
 `;
 
 const Input = styled.input<{ NoValidated: any }>`
@@ -28,6 +29,9 @@ const Input = styled.input<{ NoValidated: any }>`
   ::placeholder{
     color: #E0E0E0;
   }
+  @media (max-width: 480px) { 
+    width: 100%;
+  }
 `;
 
 const ReistrationTexLogin = styled.h2`
@@ -35,6 +39,9 @@ const ReistrationTexLogin = styled.h2`
   line-height: 1.266rem;
   color: ${corSecundaria};
   font-size: 1.875rem;
+  @media (max-width: 360px){    
+    font-size: 1.65rem;
+  }
 `;
 
 interface PropsIcon {

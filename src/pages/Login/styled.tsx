@@ -8,6 +8,12 @@ export const Fundo = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 `;
 
 export const Cadastro = styled.div`
@@ -15,6 +21,11 @@ export const Cadastro = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  padding: 3.5%;
+  @media (max-width: 1000px) {
+    padding: 0;
+    margin: 3% 10%;
+  }
 `;
 
 export const Text = styled.p`
@@ -22,23 +33,56 @@ export const Text = styled.p`
   font-size: 1rem;
   line-height: 1.266rem;
   color: ${corSecundaria};
-  width: 18.813rem;
+  width: 55%;
+  @media (max-width: 470px) {
+    font-size: 0.95rem;
+    width: 100%;
+  }
 `;
 
 export const Titulo = styled.h1`
   font-size: 3.75rem;
   font-weight: 400;
   color: ${corSecundaria};
+  @media (max-width: 360px) {
+    font-size: 3rem;
+  }
 `;
 
 export const Welcome = styled.div`
-  margin-bottom: 135px;
+  padding-bottom: 25%;
+  @media (max-width: 360px) {
+    width: 100%;
+  }
 `;
 
-export const ImgPc = styled.div`
-  background-image: url(${mask});
-  background-repeat: no-repeat;
-  background-size: cover;
+export const ImgLogoMobile = styled.img`
+  display: none;
+  @media (max-width: 1000px) {
+    display: block;
+    width: 15rem;
+    height: 3.5rem;
+    margin: 3% 0;
+  }
+  @media (max-width: 470px) {
+    display: block;
+    width: 10rem;
+    height: 2.25rem;
+    margin: 3% 0;
+  }
+`;
+
+export const ContainerLogoMobile = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ImgPc = styled.img`
+  object-fit: cover;
+  object-position: top center;
   width: 50vw;
   height: 100vh;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
