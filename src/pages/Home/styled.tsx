@@ -3,7 +3,7 @@ import LogoCompasso from "../../assets/LogoCompasso.svg";
 import Temperatura from "../../assets/temperatura.png";
 
 export const Back = styled.div`
-  /* height: 100vh; */
+  height: 100vh;
 `;
 
 export const Header = styled.header`
@@ -38,11 +38,11 @@ export const Content = styled.div`
 export const ImgCompass = styled.img`
   max-width: 600px;
   align-self: flex-end;
-  margin-bottom: -5%;
+  margin-bottom: -10%;
   z-index: -1;
   max-height: 51.563rem;
   box-sizing: boder-box;
-  width: 45vw;
+  max-width: 45vw;
 `;
 export const TextEnglish = styled.h1`
   color:#C12D18;

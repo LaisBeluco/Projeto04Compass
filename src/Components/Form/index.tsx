@@ -10,7 +10,8 @@ import * as E from "./styled";
 const UserRegistration = styled.form`
   display: flex;
   flex-direction: column;
-  height: 25.313rem;
+  height: 50vh;
+  max-height: 23rem;
   justify-content: space-between;
   margin-right: 50px;
 `;
