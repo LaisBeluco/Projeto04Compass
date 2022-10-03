@@ -4,9 +4,10 @@ import mask from "../../assets/mask.png";
 
 export const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
+`;
+
+export const ContainerLogin = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -33,7 +34,7 @@ export const Text = styled.p`
   font-size: 1rem;
   line-height: 1.266rem;
   color: ${corSecundaria};
-  width: 55%;
+  width: 18rem;
   @media (max-width: 470px) {
     font-size: 0.95rem;
     width: 100%;
@@ -43,9 +44,11 @@ export const Text = styled.p`
 export const Titulo = styled.h1`
   font-size: 3.75rem;
   font-weight: 400;
+width: 18rem;
   color: ${corSecundaria};
   @media (max-width: 360px) {
     font-size: 3rem;
+    width: 100%;
   }
 `;
 

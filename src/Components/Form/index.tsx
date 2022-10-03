@@ -27,10 +27,10 @@ const Input = styled.input<{ NoValidated: any }>`
   font-size: 1rem;
   padding: 1.25rem;
   color: ${corSecundaria};
-  ::placeholder{
-    color: #E0E0E0;
+  ::placeholder {
+    color: #e0e0e0;
   }
-  @media (max-width: 480px) { 
+  @media (max-width: 480px) {
     width: 100%;
   }
 `;
@@ -40,7 +40,7 @@ const ReistrationTexLogin = styled.h2`
   line-height: 1.266rem;
   color: ${corSecundaria};
   font-size: 1.875rem;
-  @media (max-width: 360px){    
+  @media (max-width: 360px) {
     font-size: 1.65rem;
   }
 `;
@@ -92,7 +92,7 @@ export default function Form() {
             setEmail(event.target.value);
           }}
         />
-        <E.Icon user={true} transition={email}/>
+        <E.Icon user={true} transition={email} />
       </div>
       <div style={{ position: "relative" }}>
         <Input
@@ -107,7 +107,7 @@ export default function Form() {
             setSenha(event.target.value);
           }}
         />
-        <E.Icon user={false} transition={senha}/>
+        <E.Icon user={false} transition={senha} />
       </div>
       {NoValidated ? (
         <E.MesageError>
