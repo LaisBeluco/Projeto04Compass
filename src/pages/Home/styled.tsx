@@ -44,6 +44,12 @@ export const Content = styled.div`
   @media (max-width: 768px) {
    margin: 0 auto;
    justify-content: center;
+   align-items: center;
+   height: 75.5vh;
+  }
+  @media (max-width: 700px) {
+   
+   height: 50vh;
   }
 `;
 
@@ -115,13 +121,19 @@ export const Footer = styled.footer`
   background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
   height: 6.25rem;
   width: 100%;
   bottom: 0;
   left: 0;
   position: fixed;
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
+    height: 7rem;
+  }
+  @media (max-width: 700px) {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -133,4 +145,16 @@ export const TextFooter = styled.p`
   padding-right: 2.188rem;
   border-right: 1px solid #ffffff;
   margin-left: 3%;
+  @media (max-width: 768px) {
+    font-size: 0.60rem;
+  }
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 45vw;
+    border-right: none;
+    border-bottom: 1px solid #ffff;
+    padding-bottom: 1rem;
+    padding: 3% 0;
+  }
 `;

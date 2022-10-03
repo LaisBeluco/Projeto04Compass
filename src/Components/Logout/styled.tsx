@@ -8,6 +8,14 @@ export const BlockLog = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    height: 7rem;
+  }
+  @media (max-width: 700px) {
+    border-radius: 5px;
+    height: 3rem;
+
+  }
 `;
 export const Nav = styled.a`
   text-decoration: none;
@@ -15,6 +23,10 @@ export const Nav = styled.a`
   color: #c13216;
   font-size: 0.75rem;
   cursor: pointer;
+  @media (max-width: 700px) {
+    font-weight: 700;
+    
+  }
 `;
 
 export const LogOut = styled.a`
@@ -25,10 +37,19 @@ export const LogOut = styled.a`
   font-weight: 700;
   font-size: 0.75rem;
   width: 8.188rem;
-  color: #FFFFFF;
-`
+  color: #ffffff;
+  @media (width: 700px) { 
+    margin: 12px 0 0 0;
+  }
+`;
 export const ContainerLog = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+  @media (max-width: 700px) {
+    flex-direction: column;
+    padding: 3% 0;
+    height: 13vh;
+    justify-content: space-between;
+  }
+`;

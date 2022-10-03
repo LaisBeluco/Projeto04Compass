@@ -25,7 +25,7 @@ const Input = styled.input<{ NoValidated: any }>`
   width: 23.688rem;
   height: 3.75rem;
   font-size: 1rem;
-  padding: 1.25rem;
+  padding: 0 2.8rem 0 1.50rem;
   color: ${corSecundaria};
   ::placeholder {
     color: #e0e0e0;
