@@ -16,12 +16,20 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
-export const Img = styled.div`
-  background-image: url(${LogoCompasso});
-  background-repeat: no-repeat;
+export const Img = styled.img`
   margin: 25px 0 0 40px;
   width: 9.375rem;
   height: 2.672rem;
+  @media (width: 425px) {
+    width: 7.75rem;
+    height: 3rem;
+    margin: 20px 0 0 30px;
+  }
+  @media (width: 375px) {
+    width: 7.75rem;
+    height: 3rem;
+    margin: 20px 0 0 30px;
+  }
 `;
 
 export const ImgFixo = styled.div`
@@ -42,21 +50,23 @@ export const Content = styled.div`
     height: 80vh;
   }
   @media (max-width: 768px) {
-   margin: 0 auto;
-   justify-content: center;
-   align-items: center;
-   height: 75.5vh;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 75.5vh;
   }
   @media (max-width: 700px) {
-   
-   height: 50vh;
+    height: 50vh;
+  }
+  @media (width: 425px) {
+    height: 57vh;
   }
 `;
 
 export const ImgCompass = styled.img`
   display: block;
   max-width: 50vw;
-  max-height: 46rem;
+  max-height: 43rem;
   align-self: flex-end;
   z-index: -1;
   box-sizing: boder-box;
@@ -71,16 +81,10 @@ export const ImgCompass = styled.img`
 
 export const Test02 = styled.div`
   @media (max-width: 768px) {
-   align-items: center;
-   text-align: center;
+    align-items: center;
+    text-align: right;
   }
 `;
-
-// export const ImgCompass = styled.div`
-// background-image: url(ballCompass);
-// width: 40px;
-// height: 40px;
-// `;
 
 export const TextEnglish = styled.h1`
   color: #c12d18;
@@ -93,20 +97,26 @@ export const TextEnglish = styled.h1`
   @media (max-width: 1024px) {
     font-size: 2.5rem;
   }
-  @media (max-width: 768px) {
-   align-items: center;
-   text-align: center;
+  @media (max-width: 700px) {
+    font-size: 2rem;
+    text-align: right;
+  }
+  @media (width: 425px) {
+    font-size: 1.60rem;
+  }
+  @media (width: 320px) {
+    font-size: 1.50rem;
   }
 `;
 
 export const TextPortugueseSpan = styled.span`
   color: #222222;
   font-size: 1.5rem;
-  text-align: right;
   @media (max-width: 1024px) {
     font-size: 1rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
+    font-size: 0.75rem;
   }
 `;
 
@@ -114,6 +124,16 @@ export const TextEnglishSmall = styled(TextEnglish)`
   font-size: 2.25rem;
   @media (max-width: 1024px) {
     font-size: 1.75rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 1.50rem;
+    text-align: right;
+  }
+  @media (width: 425px) {
+    font-size: 1.25rem;
+  }
+  @media (width: 320px) {
+    font-size: 1rem;
   }
 `;
 
@@ -146,15 +166,17 @@ export const TextFooter = styled.p`
   border-right: 1px solid #ffffff;
   margin-left: 3%;
   @media (max-width: 768px) {
-    font-size: 0.60rem;
+    font-size: 0.6rem;
   }
   @media (max-width: 700px) {
     flex-wrap: wrap;
     justify-content: center;
-    width: 45vw;
+    width: 93vw;
+    margin: 0;
     border-right: none;
     border-bottom: 1px solid #ffff;
     padding-bottom: 1rem;
     padding: 3% 0;
+    font-size: 0.8rem;
   }
 `;

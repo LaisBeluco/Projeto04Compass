@@ -5,6 +5,9 @@ export const Timer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 3%;
+  @media (width: 700px){ 
+    height: 50vh;
+  }
 `;
 
 export const TextTimer = styled.p`

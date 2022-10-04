@@ -5,6 +5,7 @@ import Logout from "../../Components/Logout";
 import { Day } from "../../Components/Day";
 import ballCompass from "../../assets/bolaCompass.svg";
 import Weader from "../../Components/Weather";
+import LogoCompassTest from "../../assets/logoCompassTeste.svg"
 
 function Home() {
   return (
@@ -12,7 +13,7 @@ function Home() {
       <E.Test>
         <E.Back>
           <E.Header>
-            <E.Img />
+            <E.Img src={LogoCompassTest}/>
             <Day />
             <Weader />
           </E.Header>

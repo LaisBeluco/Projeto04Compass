@@ -38,8 +38,8 @@ export const LogOut = styled.a`
   font-size: 0.75rem;
   width: 8.188rem;
   color: #ffffff;
-  @media (width: 700px) { 
-    margin: 12px 0 0 0;
+  @media (width: 700px) {
+    
   }
 `;
 export const ContainerLog = styled.div`
@@ -49,7 +49,7 @@ export const ContainerLog = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     padding: 3% 0;
-    height: 13vh;
-    justify-content: space-between;
+    min-height: 120px;
+    justify-content: space-around;
   }
 `;

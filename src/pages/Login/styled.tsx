@@ -4,6 +4,8 @@ import mask from "../../assets/mask.png";
 
 export const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
+  height: 100vh;
+  width: 100vw;
 `;
 
 export const ContainerLogin = styled.div`
@@ -44,7 +46,7 @@ export const Text = styled.p`
 export const Titulo = styled.h1`
   font-size: 3.75rem;
   font-weight: 400;
-width: 18rem;
+  width: 18rem;
   color: ${corSecundaria};
   @media (max-width: 360px) {
     font-size: 3rem;
