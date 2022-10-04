@@ -10,9 +10,9 @@ import * as E from "./styled";
 const UserRegistration = styled.form`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  max-height: 23rem;
-  justify-content: space-between;
+  height: 45vh;
+  /* height: 20rem; */
+  justify-content: space-evenly;
   margin-right: 50px;
 `;
 
@@ -116,7 +116,6 @@ export default function Form() {
       ) : (
         <div></div>
       )}
-      <Button>Continuar</Button>
     </UserRegistration>
   );
 }

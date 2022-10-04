@@ -17,18 +17,20 @@ export const Header = styled.header`
 `;
 
 export const Img = styled.img`
-  margin: 25px 0 0 40px;
+  margin: 25px 0 0 30px;
   width: 9.375rem;
   height: 2.672rem;
-  @media (width: 425px) {
+  @media (max-width: 425px) {
     width: 7.75rem;
     height: 3rem;
     margin: 20px 0 0 30px;
   }
-  @media (width: 375px) {
-    width: 7.75rem;
-    height: 3rem;
-    margin: 20px 0 0 30px;
+  @media (max-width: 375px) {
+    width: 7rem;
+    margin: 19px 0 0 20px;
+  }
+  @media (max-width: 280px) {
+    width: 6.7rem;
   }
 `;
 
@@ -57,9 +59,6 @@ export const Content = styled.div`
   }
   @media (max-width: 700px) {
     height: 50vh;
-  }
-  @media (width: 425px) {
-    height: 57vh;
   }
 `;
 
@@ -101,11 +100,18 @@ export const TextEnglish = styled.h1`
     font-size: 2rem;
     text-align: right;
   }
-  @media (width: 425px) {
+  @media (max-width: 425px) {
     font-size: 1.60rem;
   }
-  @media (width: 320px) {
-    font-size: 1.50rem;
+  @media (max-width: 375px) {
+    margin: 0rem 4%;
+    font-size: 1.55rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 1.40rem;
+  }
+  @media (max-width: 280px) {
+    font-size: 1.20rem;
   }
 `;
 
@@ -129,10 +135,10 @@ export const TextEnglishSmall = styled(TextEnglish)`
     font-size: 1.50rem;
     text-align: right;
   }
-  @media (width: 425px) {
+  @media (max-width: 425px) {
     font-size: 1.25rem;
   }
-  @media (width: 320px) {
+  @media (max-width: 320px) {
     font-size: 1rem;
   }
 `;
@@ -171,12 +177,16 @@ export const TextFooter = styled.p`
   @media (max-width: 700px) {
     flex-wrap: wrap;
     justify-content: center;
-    width: 93vw;
+    width: 80vw;
     margin: 0;
+    margin-bottom: 10px;
     border-right: none;
     border-bottom: 1px solid #ffff;
     padding-bottom: 1rem;
     padding: 3% 0;
     font-size: 0.8rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 0.65rem;
   }
 `;

@@ -3,6 +3,7 @@ import * as E from "./styled";
 import Form from "../../Components/Form";
 import mask from "../../assets/mask.png";
 import logoMobile from "../../assets/logoMobile.png";
+import { Button } from "../../Components/UI";
 
 export function Login() {
   return (
@@ -19,6 +20,7 @@ export function Login() {
             </E.Text>
           </E.Welcome>
           <Form />
+          <Button>Continuar</Button>
         </E.Cadastro>
         <E.ImgPc src={mask} />
       </E.ContainerLogin>

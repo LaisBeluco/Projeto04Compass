@@ -4,8 +4,11 @@ import CompassWeader from "../../assets/CompassCloud.png";
 export const Climate = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 25px 20px 0 0;
-  width: 7.563rem;
+  margin: 25px 30px 0 0;
+  width: 6.563rem;
+  @media (max-width: 375px) {
+    margin: 19px 0 0 20px;
+  }
 `;
 
 export const Location = styled.p`
@@ -14,7 +17,10 @@ export const Location = styled.p`
   font-weight: 400;
   text-align: left;
   @media (width: 425px) {
-    font-size: 0.80rem;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 375px) {
+    font-size: 0.76rem;
   }
 `;
 
@@ -23,11 +29,14 @@ export const Temperature = styled.div`
 `;
 
 export const IconClimate = styled.img`
-  /* background-image: url(${CompassWeader}); */
   width: 30px;
   height: 30px;
   align-self: center;
-  margin-right: 0.75rem;
+  margin-right: 6%;
+  @media (max-width: 375px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const TemperaturaNumber = styled.div`
@@ -35,7 +44,7 @@ export const TemperaturaNumber = styled.div`
   font-weight: 700;
   font-size: 3rem;
   @media (max-width: 425px) {
-    font-size: 2.50rem;
+    font-size: 2.5rem;
   }
   @media (width: 375px) {
     font-size: 2.25rem;

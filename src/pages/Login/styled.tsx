@@ -9,11 +9,11 @@ export const Fundo = styled.div`
 `;
 
 export const ContainerLogin = styled.div`
+  height: 100vh;
   display: flex;
   margin: 0 auto;
   @media (max-width: 1000px) {
     flex-direction: column;
-    height: 100vh;
     align-items: center;
     justify-content: space-evenly;
   }
@@ -66,8 +66,6 @@ export const ImgLogoMobile = styled.img`
   @media (max-width: 1000px) {
     display: block;
     width: 15rem;
-    height: 3.5rem;
-    margin: 3% 0;
   }
   @media (max-width: 470px) {
     display: block;
