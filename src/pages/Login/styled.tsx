@@ -4,22 +4,23 @@ import mask from "../../assets/mask.png";
 
 export const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
-  height: 100vh;
   width: 100vw;
-  @media screen and (max-height: 900px) {
-    min-height: 900px;
+  height: 100vh;
+  @media screen and (max-height: 680px) { 
+    min-height: 660px;
   }
 `;
 
 export const ContainerLogin = styled.div`
-  height: 100vh;
   display: flex;
   margin: 0 auto;
   @media (max-width: 1000px) {
+    padding-top: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
   }
+  
 `;
 
 export const Cadastro = styled.div`

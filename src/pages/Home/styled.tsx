@@ -7,6 +7,7 @@ export const Back = styled.div`
   /* height: 100vh; */
 `;
 export const Test = styled.div`
+  position: relative;
   height: 100vh;
 `;
 
@@ -55,7 +56,7 @@ export const Content = styled.div`
     margin: 0 5%;
     justify-content: end;
     align-items: center;
-    height: 75.5vh;
+    height: 70vh;
   }
   @media (max-width: 700px) {
     height: 50vh;
@@ -101,14 +102,14 @@ export const TextEnglish = styled.h1`
     text-align: right;
   }
   @media (max-width: 425px) {
-    font-size: 1.60rem;
+    font-size: 1.6rem;
   }
   @media (max-width: 375px) {
     margin: 0rem 4%;
     font-size: 1.55rem;
   }
   @media (max-width: 320px) {
-    font-size: 1.40rem;
+    font-size: 1.4rem;
   }
   @media (max-width: 280px) {
     font-size: 1rem;
@@ -132,7 +133,7 @@ export const TextEnglishSmall = styled(TextEnglish)`
     font-size: 1.75rem;
   }
   @media (max-width: 700px) {
-    font-size: 1.50rem;
+    font-size: 1.5rem;
     text-align: right;
   }
   @media (max-width: 425px) {
@@ -148,14 +149,19 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 6.25rem;
+  height: auto;
   width: 100%;
   bottom: 0;
   left: 0;
   position: fixed;
+
   @media (max-width: 768px) {
     height: 7rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
+
   @media (max-width: 700px) {
     height: auto;
     flex-direction: column;
