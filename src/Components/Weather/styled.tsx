@@ -4,10 +4,11 @@ import CompassWeader from "../../assets/CompassCloud.png";
 export const Climate = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 25px 30px 0 0;
-  width: 6.563rem;
+  margin: 25px 0 0 0;
+  /* width: 6.563rem; */
   @media (max-width: 375px) {
-    margin: 19px 0 0 20px;
+    /* margin: 19px 0 0 0px; */
+    margin: 25px 5% 0 0;
   }
 `;
 

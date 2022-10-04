@@ -11,9 +11,7 @@ const UserRegistration = styled.form`
   display: flex;
   flex-direction: column;
   height: 45vh;
-  /* height: 20rem; */
   justify-content: space-evenly;
-  margin-right: 50px;
 `;
 
 const Input = styled.input<{ NoValidated: any }>`
@@ -23,15 +21,15 @@ const Input = styled.input<{ NoValidated: any }>`
   border-radius: 50px;
   box-sizing: border-box;
   width: 23.688rem;
-  height: 3.75rem;
+  /* height: 3.75rem; */
   font-size: 1rem;
-  padding: 0 2.8rem 0 1.50rem;
+  padding: 0.9rem 2.8rem 0.9rem 1.5rem;
   color: ${corSecundaria};
   ::placeholder {
     color: #e0e0e0;
   }
   @media (max-width: 480px) {
-    width: 100%;
+    width: 85%;
   }
 `;
 
@@ -116,6 +114,7 @@ export default function Form() {
       ) : (
         <div></div>
       )}
+      <Button>Continuar</Button>
     </UserRegistration>
   );
 }

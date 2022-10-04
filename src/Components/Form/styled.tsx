@@ -14,6 +14,10 @@ export const MesageError = styled.span`
   width: 17.688rem;
   text-align: center;
   align-self: center;
+  @media (max-width: 425px){
+    width: 60vw;
+    font-size: 0.85rem;
+  }
 `;
 
 export const Icon = styled.i<IconI>`

@@ -12,22 +12,22 @@ export const Test = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  margin: 0 auto;
+  margin: 0 5%;
   justify-content: space-between;
 `;
 
 export const Img = styled.img`
-  margin: 25px 0 0 30px;
+  margin: 25px 0 0 0;
   width: 9.375rem;
   height: 2.672rem;
   @media (max-width: 425px) {
     width: 7.75rem;
     height: 3rem;
-    margin: 20px 0 0 30px;
+    margin: 20px 0 0 0px;
   }
   @media (max-width: 375px) {
     width: 7rem;
-    margin: 19px 0 0 20px;
+    margin: 19px 0 0 0px;
   }
   @media (max-width: 280px) {
     width: 6.7rem;
@@ -52,8 +52,8 @@ export const Content = styled.div`
     height: 80vh;
   }
   @media (max-width: 768px) {
-    margin: 0 auto;
-    justify-content: center;
+    margin: 0 5%;
+    justify-content: end;
     align-items: center;
     height: 75.5vh;
   }
@@ -111,7 +111,7 @@ export const TextEnglish = styled.h1`
     font-size: 1.40rem;
   }
   @media (max-width: 280px) {
-    font-size: 1.20rem;
+    font-size: 1rem;
   }
 `;
 

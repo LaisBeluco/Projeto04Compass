@@ -6,6 +6,9 @@ export const Fundo = styled.div`
   background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
   height: 100vh;
   width: 100vw;
+  @media screen and (max-height: 900px) {
+    min-height: 900px;
+  }
 `;
 
 export const ContainerLogin = styled.div`

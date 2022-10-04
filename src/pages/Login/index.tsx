@@ -20,7 +20,6 @@ export function Login() {
             </E.Text>
           </E.Welcome>
           <Form />
-          <Button>Continuar</Button>
         </E.Cadastro>
         <E.ImgPc src={mask} />
       </E.ContainerLogin>
