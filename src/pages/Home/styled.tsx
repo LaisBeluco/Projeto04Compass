@@ -3,11 +3,7 @@ import LogoCompasso from "../../assets/LogoCompasso.svg";
 import Temperatura from "../../assets/temperatura.png";
 import ballCompass from "../../assets/bolaCompass.svg";
 
-export const Back = styled.div`
-  /* height: 100vh; */
-`;
 export const Test = styled.div`
-  position: relative;
   height: 100vh;
 `;
 
@@ -18,48 +14,38 @@ export const Header = styled.header`
 `;
 
 export const Img = styled.img`
-  margin: 25px 0 0 0;
-  width: 9.375rem;
+  width: 6.7rem;
   height: 2.672rem;
-  @media (max-width: 425px) {
-    width: 7.75rem;
-    height: 3rem;
-    margin: 20px 0 0 0px;
-  }
-  @media (max-width: 375px) {
-    width: 7rem;
-    margin: 19px 0 0 0px;
-  }
-  @media (max-width: 280px) {
-    width: 6.7rem;
-  }
-`;
+  margin: 25px 0 0 0;
 
-export const ImgFixo = styled.div`
-  background-image: url(${Temperatura});
-  background-repeat: no-repeat;
-  margin: 25px 40px 0 0;
-  width: 9.375rem;
-  height: 4.2rem;
+  @media (min-width: 768px) {
+    width: 9rem;
+    height: 4rem;
+  }
+  @media (min-width: 1440px) {
+    width: 10rem;
+    height: 4rem;
+  }
 `;
 
 export const Content = styled.div`
   margin: 0 5% 0 0;
   display: flex;
-  height: 80vh;
+  height: 53%;
   align-items: center;
-  justify-content: space-between;
-  @media (max-width: 1024px) {
+  justify-content: end;
+  
+  @media (min-width: 1024px) {
     height: 80vh;
   }
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     margin: 0 5%;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     height: 70vh;
   }
-  @media (max-width: 700px) {
-    height: 50vh;
+  @media (min-width: 700px) {
+    height: 80vh;
   }
 `;
 
@@ -148,24 +134,17 @@ export const Footer = styled.footer`
   background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  height: 260px;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-
-  @media (max-width: 768px) {
+  @media (min-width: 700px) {
+  }
+  @media (min-width: 1024px) {
     height: 7rem;
     position: absolute;
     bottom: 0;
     left: 0;
-  }
-
-  @media (max-width: 700px) {
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
   }
 `;
 
