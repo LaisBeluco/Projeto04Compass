@@ -6,7 +6,7 @@ import * as E from "./styled";
 export default function Timer() {
   const navigate = useNavigate();
 
-  const [totalTimeInsoconds, setTimeInsoconds] = useState(600);
+  const [totalTimeInsoconds, setTimeInsoconds] = useState(60);
   const seconds = totalTimeInsoconds;
 
   useEffect(() => {
