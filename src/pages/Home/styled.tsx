@@ -61,6 +61,10 @@ export const Content = styled.div`
   @media (max-width: 700px) {
     height: 50vh;
   }
+  @media (max-height: 280px) {
+    height: auto;
+    margin: 7% 5%;
+  }
 `;
 
 export const ImgCompass = styled.img`
@@ -80,6 +84,9 @@ export const ImgCompass = styled.img`
 `;
 
 export const Test02 = styled.div`
+  @media (min-width: 1024px) {
+    margin-bottom: 7%;
+  }
   @media (max-width: 768px) {
     align-items: center;
     text-align: right;
@@ -112,7 +119,7 @@ export const TextEnglish = styled.h1`
     font-size: 1.4rem;
   }
   @media (max-width: 280px) {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 `;
 
@@ -167,6 +174,9 @@ export const Footer = styled.footer`
     flex-direction: column;
     justify-content: center;
   }
+  @media (max-height: 280px) {
+    position: initial;
+  }
 `;
 
 export const TextFooter = styled.p`
@@ -194,5 +204,8 @@ export const TextFooter = styled.p`
   }
   @media (max-width: 425px) {
     font-size: 0.65rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 0.58rem;
   }
 `;
