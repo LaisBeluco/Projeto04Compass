@@ -4,13 +4,14 @@ import Temperatura from "../../assets/temperatura.png";
 import ballCompass from "../../assets/bolaCompass.svg";
 
 export const Test = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 export const Header = styled.header`
   display: flex;
   margin: 0 5%;
   justify-content: space-between;
+  height: 15vh;
 `;
 
 export const Img = styled.img`
@@ -31,7 +32,8 @@ export const Img = styled.img`
 export const Content = styled.div`
   margin: 0 5% 0 0;
   display: flex;
-  height: 53%;
+  height: 45vh;
+  /* height: 50%; */
   align-items: center;
   justify-content: end;
   
@@ -136,7 +138,8 @@ export const Footer = styled.footer`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 260px;
+  height: 40vh;
+  /* height: 260px; */
   width: 100%;
   @media (min-width: 700px) {
   }

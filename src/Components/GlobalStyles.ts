@@ -13,5 +13,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
   }
+  body, html{
+  height: 100%;
+}
 }
 `;
