@@ -33,7 +33,6 @@ export const Content = styled.div`
   margin: 0 5% 0 0;
   display: flex;
   height: 45vh;
-  /* height: 50%; */
   align-items: center;
   justify-content: end;
   
@@ -42,12 +41,12 @@ export const Content = styled.div`
   }
   @media (min-width: 768px) {
     margin: 0 5%;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    height: 70vh;
+    height: 71.8vh;
   }
   @media (min-width: 700px) {
-    height: 80vh;
+
   }
 `;
 
@@ -139,9 +138,12 @@ export const Footer = styled.footer`
   flex-direction: column;
   justify-content: center;
   height: 40vh;
-  /* height: 260px; */
   width: 100%;
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
+    height: auto;
+    flex-direction: row;
+    /* position: absolute;
+    bottom: 0; */
   }
   @media (min-width: 1024px) {
     height: 7rem;

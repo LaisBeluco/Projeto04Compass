@@ -12,9 +12,8 @@ export const BlockLog = styled.div`
     height: 7rem;
   }
   @media (max-width: 700px) {
-    border-radius: 5px;
     height: 3rem;
-
+    width: 100%;
   }
 `;
 export const Nav = styled.a`
@@ -25,7 +24,7 @@ export const Nav = styled.a`
   cursor: pointer;
   @media (max-width: 700px) {
     font-weight: 700;
-    
+    width: 100%;
   }
 `;
 
@@ -51,5 +50,6 @@ export const ContainerLog = styled.div`
     padding: 3% 0;
     min-height: 120px;
     justify-content: space-around;
+    width: 100%;
   }
 `;
