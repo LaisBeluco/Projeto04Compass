@@ -85,7 +85,7 @@ export const ImgCompass = styled.img`
 
 export const Test02 = styled.div`
   @media (min-width: 1024px) {
-    margin-bottom: 7%;
+    margin-bottom: 10%;
   }
   @media (max-width: 768px) {
     align-items: center;
