@@ -17,6 +17,7 @@ export const ContainerRegistration = styled.div`
 
 export const ReistrationTexLogin = styled.h2`
   font-weight: 400;
+  margin-bottom:  8%;
   line-height: 1.266rem;
   color: ${corSecundaria};
   font-size: 1.875rem;
@@ -26,6 +27,7 @@ export const ReistrationTexLogin = styled.h2`
 `;
 
 export const Input = styled.input<{ NoValidated: any }>`
+  margin-bottom: 7%;
   background-color: transparent;
   border: 1px solid
     ${({ NoValidated }: any) => (NoValidated ? "#E9B425" : corPrimaria)};
@@ -37,7 +39,7 @@ export const Input = styled.input<{ NoValidated: any }>`
   padding: 0.9rem 2.8rem 0.9rem 1.5rem;
   color: ${corSecundaria};
   ::placeholder {
-    color: #e0e0e0;
+    color: #e0e0e0b9;
   }
   @media (max-width: 480px) {
     width: 85%;

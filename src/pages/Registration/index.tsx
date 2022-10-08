@@ -50,7 +50,7 @@ export default function Registration() {
     <Fundo>
       <E.ContainerRegistration>
         <E.UserRegistration onSubmit={sendForm}>
-          <E.ReistrationTexLogin>Login</E.ReistrationTexLogin>
+          <E.ReistrationTexLogin>Cadastre seu Usuário</E.ReistrationTexLogin>
           <div style={{ position: "relative" }}>
             <E.Input
               NoValidated={NoValidated}
@@ -88,7 +88,7 @@ export default function Registration() {
               id="email"
               name="email"
               required
-              placeholder="Usuário"
+              placeholder="E-mail"
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
@@ -103,7 +103,7 @@ export default function Registration() {
               id="email"
               name="email"
               required
-              placeholder="Usuário"
+              placeholder="Confirme seu e-mail"
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
@@ -133,7 +133,7 @@ export default function Registration() {
               id="senha"
               name="senha"
               required
-              placeholder="Senha"
+              placeholder="Confirme sua senha"
               value={senha}
               onChange={(event) => {
                 setSenha(event.target.value);
