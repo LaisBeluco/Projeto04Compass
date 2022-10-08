@@ -3,6 +3,7 @@ import * as E from "./styled";
 import { useState } from "react";
 import { Button } from "../../Components/UI/index";
 import { useNavigate } from "react-router-dom";
+import { Fundo } from "../Login/styled";
 
 export default function Registration() {
   const navigate = useNavigate();
@@ -46,106 +47,110 @@ export default function Registration() {
   }
 
   return (
-    <E.UserRegistration onSubmit={sendForm}>
-      <E.ReistrationTexLogin>Login</E.ReistrationTexLogin>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="text"
-          id="name"
-          name="name"
-          required
-          placeholder="Nome"
-          value={name}
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={true} transition={email} /> */}
-      </div>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="text"
-          id="last"
-          name="last"
-          required
-          placeholder="Sobrenome"
-          value={lastName}
-          onChange={(event) => {
-            setLastName(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={true} transition={email} /> */}
-      </div>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="text"
-          id="email"
-          name="email"
-          required
-          placeholder="Usuário"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={true} transition={email} /> */}
-      </div>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="text"
-          id="email"
-          name="email"
-          required
-          placeholder="Usuário"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={true} transition={email} /> */}
-      </div>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="password"
-          id="senha"
-          name="senha"
-          required
-          placeholder="Senha"
-          value={senha}
-          onChange={(event) => {
-            setSenha(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={false} transition={senha} /> */}
-      </div>
-      <div style={{ position: "relative" }}>
-        <E.Input
-          NoValidated={NoValidated}
-          type="password"
-          id="senha"
-          name="senha"
-          required
-          placeholder="Senha"
-          value={senha}
-          onChange={(event) => {
-            setSenha(event.target.value);
-          }}
-        />
-        {/* <E.Icon user={false} transition={senha} /> */}
-      </div>
-      {NoValidated ? (
-        <E.MesageError>
-          Ops, usuário ou senha inválidos. Tente novamente!
-        </E.MesageError>
-      ) : (
-        <div></div>
-      )}
-      <Button>Cadastre-se</Button>
-    </E.UserRegistration>
+    <Fundo>
+      <E.ContainerRegistration>
+        <E.UserRegistration onSubmit={sendForm}>
+          <E.ReistrationTexLogin>Login</E.ReistrationTexLogin>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Nome"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={true} transition={email} /> */}
+          </div>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="text"
+              id="last"
+              name="last"
+              required
+              placeholder="Sobrenome"
+              value={lastName}
+              onChange={(event) => {
+                setLastName(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={true} transition={email} /> */}
+          </div>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="text"
+              id="email"
+              name="email"
+              required
+              placeholder="Usuário"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={true} transition={email} /> */}
+          </div>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="text"
+              id="email"
+              name="email"
+              required
+              placeholder="Usuário"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={true} transition={email} /> */}
+          </div>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="password"
+              id="senha"
+              name="senha"
+              required
+              placeholder="Senha"
+              value={senha}
+              onChange={(event) => {
+                setSenha(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={false} transition={senha} /> */}
+          </div>
+          <div style={{ position: "relative" }}>
+            <E.Input
+              NoValidated={NoValidated}
+              type="password"
+              id="senha"
+              name="senha"
+              required
+              placeholder="Senha"
+              value={senha}
+              onChange={(event) => {
+                setSenha(event.target.value);
+              }}
+            />
+            {/* <E.Icon user={false} transition={senha} /> */}
+          </div>
+          {NoValidated ? (
+            <E.MesageError>
+              Ops, usuário ou senha inválidos. Tente novamente!
+            </E.MesageError>
+          ) : (
+            <div></div>
+          )}
+          <Button>Cadastre-se</Button>
+        </E.UserRegistration>
+      </E.ContainerRegistration>
+    </Fundo>
   );
 }

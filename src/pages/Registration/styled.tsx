@@ -4,8 +4,15 @@ import { corSecundaria, corPrimaria } from "../../Components/UI/variaveis";
 export const UserRegistration = styled.form`
   display: flex;
   flex-direction: column;
-  height: 20rem;
-  justify-content: space-evenly;
+  align-items: center;
+  max-width: 50vw;
+  justify-content: center;
+`;
+
+export const ContainerRegistration = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 `;
 
 export const ReistrationTexLogin = styled.h2`
