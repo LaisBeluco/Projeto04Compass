@@ -4,14 +4,10 @@ import styled from "styled-components";
 import { basicSchema } from "../../schemas";
 import * as yup from "yup";
 
-import {
-  Formik,
-  ErrorMessage,
-} from "formik";
+import { Formik, ErrorMessage } from "formik";
 import { object } from "yup";
 
 export default function Cadastro() {
-
   interface FormModel {
     name: string;
     lastname: string;
@@ -32,22 +28,22 @@ export default function Cadastro() {
           email: yup
             .string()
             .email("Por favor, coloque um e-mail valido")
-            .required("Campo obrigatório"),
+            .required("*"),
           confirmEmail: yup
             .string()
             .oneOf([yup.ref("email"), null], "Os e-mails tem que ser iguais")
-            .required("Campo obrigatório"),
+            .required("*"),
           password: yup
             .string()
             .min(6)
             .matches(passwordRules, {
               message: "Por favor, crie uma senha mais forte",
             })
-            .required("Campo obrigatório"),
+            .required("*"),
           confirmPassword: yup
             .string()
             .oneOf([yup.ref("password"), null], "As senhas tem que ser iguais")
-            .required("Campo obrigatório"),
+            .required("*"),
         })}
         initialValues={{
           name: "",
@@ -61,7 +57,7 @@ export default function Cadastro() {
           alert(JSON.stringify(values));
         }}
       >
-        {({ handleSubmit, values, handleChange }) => (
+        {({ handleSubmit, values, handleBlur, handleChange }) => (
           <form onSubmit={handleSubmit} className="cadastro-form">
             <div className="cadastro-form-group">
               <label htmlFor="name">Nome:</label>
@@ -71,7 +67,8 @@ export default function Cadastro() {
                 className="form-fiel"
                 placeholder="Nome"
                 value={values.name}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="name"
@@ -80,13 +77,15 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
+              <label htmlFor="lastname">Sobrenome:</label>
               <input
                 type="text"
                 name="lastname"
                 className="form-fiel"
                 placeholder="Sobrenome"
                 value={values.lastname}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="lastname"
@@ -95,13 +94,15 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
+              <label htmlFor="email">E-mail:</label>
               <input
                 type="text"
                 name="email"
                 className="form-fiel"
                 placeholder="E-mail"
                 value={values.email}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="email"
@@ -110,13 +111,15 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
+              <label htmlFor="confirmEmail">Confirme seu E-mail:</label>
               <input
                 type="text"
                 name="confirmEmail"
                 className="form-fiel"
                 placeholder="Confirme o E-mail"
                 value={values.confirmEmail}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="confirmEmail"
@@ -125,13 +128,15 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
+              <label htmlFor="password">Senha:</label>
               <input
                 type="password"
                 name="password"
                 className="form-fiel"
                 placeholder="Senha"
                 value={values.password}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="password"
@@ -140,13 +145,15 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
+              <label htmlFor="confirmPassword">Confirme sua Senha:</label>
               <input
                 type="password"
                 name="confirmPassword"
                 className="form-fiel"
                 placeholder="Confirme a Senha"
                 value={values.confirmPassword}
-                onChange={handleChange}
+                onBlur={handleBlur}
+                onChange = {handleChange}
               />
               <ErrorMessage
                 name="confirmPassword"
