@@ -1,42 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import * as E from "./styled";
-import * as Yup from "yup";
+import styled from "styled-components";
+import { basicSchema } from "../../schemas";
+import * as yup from "yup";
+
 import {
-  withFormik,
-  FormikProps,
-  FormikErrors,
-  Form,
-  Field,
   Formik,
   ErrorMessage,
 } from "formik";
+import { object } from "yup";
 
 export default function Cadastro() {
-  // const handleClickRegistro = ({values}: any) => console.log(values);
+
+  interface FormModel {
+    name: string;
+    lastname: string;
+    email: string;
+    confirmEmail: string;
+    password: string;
+    confirmPassword: string;
+  }
+  const passwordRules =
+    /(?=.*[}{,.^?~=+\-_\/*\-+.\|])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/gm;
 
   return (
     <div className="container">
-      <Formik
+      <Formik<FormModel>
+        validationSchema={object({
+          name: yup.string().min(2).required("Campo obrigatório"),
+          lastname: yup.string().required("Campo obrigatório"),
+          email: yup
+            .string()
+            .email("Por favor, coloque um e-mail valido")
+            .required("Campo obrigatório"),
+          confirmEmail: yup
+            .string()
+            .oneOf([yup.ref("email"), null], "Os e-mails tem que ser iguais")
+            .required("Campo obrigatório"),
+          password: yup
+            .string()
+            .min(6)
+            .matches(passwordRules, {
+              message: "Por favor, crie uma senha mais forte",
+            })
+            .required("Campo obrigatório"),
+          confirmPassword: yup
+            .string()
+            .oneOf([yup.ref("password"), null], "As senhas tem que ser iguais")
+            .required("Campo obrigatório"),
+        })}
         initialValues={{
           name: "",
-          lastName: "",
-          username: "",
+          lastname: "",
           email: "",
-          dob: "",
+          confirmEmail: "",
           password: "",
+          confirmPassword: "",
         }}
         onSubmit={(values) => {
-          console.log(JSON.stringify(values))
+          alert(JSON.stringify(values));
         }}
       >
-        {({handleSubmit}) => (
-          <Form className="cadastro-form" onSubmit={handleSubmit}>
+        {({ handleSubmit, values, handleChange }) => (
+          <form onSubmit={handleSubmit} className="cadastro-form">
             <div className="cadastro-form-group">
-              <Field
+              <label htmlFor="name">Nome:</label>
+              <input
+                type="text"
                 name="name"
                 className="form-fiel"
-                placeHolder="Nome"
-                type="name"
+                placeholder="Nome"
+                value={values.name}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="name"
@@ -45,13 +80,76 @@ export default function Cadastro() {
               />
             </div>
             <div className="cadastro-form-group">
-              <Field
-                name="lastName"
+              <input
+                type="text"
+                name="lastname"
                 className="form-fiel"
-                placeHolder="Sobrenome"
+                placeholder="Sobrenome"
+                value={values.lastname}
+                onChange={handleChange}
               />
               <ErrorMessage
-                name="lastName"
+                name="lastname"
+                className="cadastro-error"
+                component="span"
+              />
+            </div>
+            <div className="cadastro-form-group">
+              <input
+                type="text"
+                name="email"
+                className="form-fiel"
+                placeholder="E-mail"
+                value={values.email}
+                onChange={handleChange}
+              />
+              <ErrorMessage
+                name="email"
+                className="cadastro-error"
+                component="span"
+              />
+            </div>
+            <div className="cadastro-form-group">
+              <input
+                type="text"
+                name="confirmEmail"
+                className="form-fiel"
+                placeholder="Confirme o E-mail"
+                value={values.confirmEmail}
+                onChange={handleChange}
+              />
+              <ErrorMessage
+                name="confirmEmail"
+                className="cadastro-error"
+                component="span"
+              />
+            </div>
+            <div className="cadastro-form-group">
+              <input
+                type="password"
+                name="password"
+                className="form-fiel"
+                placeholder="Senha"
+                value={values.password}
+                onChange={handleChange}
+              />
+              <ErrorMessage
+                name="password"
+                className="cadastro-error"
+                component="span"
+              />
+            </div>
+            <div className="cadastro-form-group">
+              <input
+                type="password"
+                name="confirmPassword"
+                className="form-fiel"
+                placeholder="Confirme a Senha"
+                value={values.confirmPassword}
+                onChange={handleChange}
+              />
+              <ErrorMessage
+                name="confirmPassword"
                 className="cadastro-error"
                 component="span"
               />
@@ -59,7 +157,7 @@ export default function Cadastro() {
             <button className="button" type="submit">
               Cadastro
             </button>
-          </Form>
+          </form>
         )}
       </Formik>
     </div>
