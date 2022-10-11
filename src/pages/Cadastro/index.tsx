@@ -1,29 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import * as E from "./styled";
 import styled from "styled-components";
 import { basicSchema } from "../../schemas";
 import * as yup from "yup";
-
+// import { useAuth } from "../../context/Auth/AuthContext";
 import { Formik, ErrorMessage } from "formik";
 import { object } from "yup";
+import { useUpdateProfile } from "react-firebase-hooks/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged,
+  getAuth
+} from "firebase/auth";
+import { auth } from "../../firebase";
 
 export default function Cadastro() {
+  // const emailRef  = useRef()
+  // const passwordRef = useRef()
+  // const passwordConfirmRef = useRef()
+  // const { signup }:any = useAuth();
+
+  // function handleSubmit({ e }: any) {
+  //   e.preventDefault();
+
+  //   signup(emailRef.current.value, passwordRef.current.value);
+  // }
+  var userNow = auth.currentUser;
+
+  // updateProfile(userNow, {displayName: "teste"})
+  const [updateProfile, updating, error] = useUpdateProfile(auth);
+  const register = async (value: any) => {
+    console.log(value);
+
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        value.email,
+        value.password
+      );
+      
+      await updateProfile({ displayName: value.registerName });
+      console.log(user.user.displayName);
+    } catch {
+      console.log("erro");
+    }
+  };
+
   interface FormModel {
-    name: string;
+    registerName: string;
     lastname: string;
     email: string;
     confirmEmail: string;
     password: string;
     confirmPassword: string;
   }
-  const passwordRules =
-    /(?=.*[}{,.^?~=+\-_\/*\-+.\|])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/gm;
+
+  // const passwordRules =
+  //   /(?=.*[}{,.^?~=+\-_\/*\-+.\|])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/gm;
+
+  // .matches(passwordRules, {
+  //   message: "Por favor, crie uma senha mais forte",
+  // })
 
   return (
     <div className="container">
       <Formik<FormModel>
         validationSchema={object({
-          name: yup.string().min(2).required("Campo obrigatório"),
+          registerName: yup.string().min(2, "Too short").required("Required"),
           lastname: yup.string().required("Campo obrigatório"),
           email: yup
             .string()
@@ -36,9 +80,7 @@ export default function Cadastro() {
           password: yup
             .string()
             .min(6)
-            .matches(passwordRules, {
-              message: "Por favor, crie uma senha mais forte",
-            })
+
             .required("*"),
           confirmPassword: yup
             .string()
@@ -46,7 +88,7 @@ export default function Cadastro() {
             .required("*"),
         })}
         initialValues={{
-          name: "",
+          registerName: "",
           lastname: "",
           email: "",
           confirmEmail: "",
@@ -54,24 +96,25 @@ export default function Cadastro() {
           confirmPassword: "",
         }}
         onSubmit={(values) => {
-          alert(JSON.stringify(values));
+          console.log(values.registerName);
+          register(values);
         }}
       >
         {({ handleSubmit, values, handleBlur, handleChange }) => (
           <form onSubmit={handleSubmit} className="cadastro-form">
             <div className="cadastro-form-group">
-              <label htmlFor="name">Nome:</label>
+              <label htmlFor="registerName">Nome:</label>
               <input
                 type="text"
-                name="name"
+                name="registerName"
                 className="form-fiel"
                 placeholder="Nome"
-                value={values.name}
+                value={values.registerName}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
-                name="name"
+                name="registerName"
                 className="cadastro-error"
                 component="span"
               />
@@ -85,7 +128,7 @@ export default function Cadastro() {
                 placeholder="Sobrenome"
                 value={values.lastname}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="lastname"
@@ -102,7 +145,7 @@ export default function Cadastro() {
                 placeholder="E-mail"
                 value={values.email}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="email"
@@ -119,7 +162,7 @@ export default function Cadastro() {
                 placeholder="Confirme o E-mail"
                 value={values.confirmEmail}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="confirmEmail"
@@ -136,7 +179,7 @@ export default function Cadastro() {
                 placeholder="Senha"
                 value={values.password}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="password"
@@ -153,7 +196,7 @@ export default function Cadastro() {
                 placeholder="Confirme a Senha"
                 value={values.confirmPassword}
                 onBlur={handleBlur}
-                onChange = {handleChange}
+                onChange={handleChange}
               />
               <ErrorMessage
                 name="confirmPassword"

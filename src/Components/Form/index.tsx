@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Button } from "../UI";
 import { useNavigate } from "react-router-dom";
 import * as E from "./styled";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const UserRegistration = styled.form`
   display: flex;
@@ -59,20 +61,27 @@ export default function Form() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [NoValidated, setNoValidated] = useState(Boolean);
-
+  console.log(email, senha);
   function sendForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     let regEmail = /[^@\t\r\n]+@[^@\t\r\n]+\.[^@\t\r\n]+/;
 
-    if (regEmail.test(email) && senha.length > 3) {
-      navigate("/home");
-      return setNoValidated(false);
-    } else {
-      return setNoValidated(true);
-    }
-  }
 
+  }
+  const login = async () => {
+    const auth = getAuth();
+    try {
+      const logon = await signInWithEmailAndPassword(auth, email, senha);
+      console.log(logon, " entrou");
+      navigate("/home");
+ 
+    } catch {
+      console.log("erro");
+      setNoValidated(true);
+    }
+  };
+  
   return (
     <UserRegistration onSubmit={sendForm}>
       <ReistrationTexLogin>Login</ReistrationTexLogin>
@@ -113,7 +122,7 @@ export default function Form() {
       ) : (
         <div></div>
       )}
-      <Button>Continuar</Button>
+      <Button onClick={login}>Continuar</Button>
     </UserRegistration>
   );
 }
