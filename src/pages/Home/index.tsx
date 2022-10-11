@@ -5,19 +5,37 @@ import Logout from "../../Components/Logout";
 import { Day } from "../../Components/Day";
 import ballCompass from "../../assets/bolaCompass.svg";
 import Weader from "../../Components/Weather";
-import LogoCompassTest from "../../assets/logoCompassTeste.svg"
+import LogoCompassTest from "../../assets/logoCompassTeste.svg";
 import { auth } from "../../firebase";
-import { getAuth } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const user = getAuth();
-  console.log()
+  const navigate = useNavigate();
+  // const logout = async () => {
+  //   const auth = getAuth();
+  //   try {
+  //     const logon = await signInWithEmailAndPassword(auth, );
+  //     console.log(logon, " entrou");
+  //     navigate("/home");
+  //   } catch {
+  //     console.log("erro");
+  //     setNoValidated(true);
+  //   }
+  // };
+  // const logout = async () => {
+  //   const a = getAuth();
+  //   const def = (() => {
+  //     a.currentUser?.displayName;
+  //   })
+  //   console.log(def);
+  // };
   return (
     <>
       <E.Test>
         <E.Back>
           <E.Header>
-            <E.Img src={LogoCompassTest}/>
+            <E.Img src={LogoCompassTest} />
             <Day />
             <Weader />
           </E.Header>
@@ -55,7 +73,6 @@ function Home() {
           </E.TextFooter>
           <Timer />
           <Logout />
-          
         </E.Footer>
       </E.Test>
     </>
@@ -63,3 +80,6 @@ function Home() {
 }
 
 export default Home;
+function setNoValidated(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
