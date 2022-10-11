@@ -10,10 +10,11 @@ export const BlockLog = styled.div`
   justify-content: center;
   @media (max-width: 768px) {
     height: 7rem;
-    width: 100%;
+    width: 6rem;
   }
   @media (max-width: 700px) {
     height: 3rem;
+    width: 100%;
   }
 `;
 export const Nav = styled.a`
@@ -40,8 +41,14 @@ export const LogOut = styled.button`
   font-size: 0.75rem;
   width: 8.188rem;
   color: #ffffff;
+  @media (max-width: 768px) {
+    height: 7rem;
+    width: 6rem;
+  }
   @media (max-width: 700px) {
     padding-top: 1.25%;
+    height: 3rem;
+    width: 100%;
   }
 `;
 export const ContainerLog = styled.div`

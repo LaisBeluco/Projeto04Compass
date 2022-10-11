@@ -77,3 +77,15 @@ export const LinkResgister = styled.a`
   color: #68c2ec;
   text-decoration: underline;
 `
+
+export const ReistrationTexLogin = styled.h2`
+  font-weight: 400;
+  line-height: 1.266rem;
+  color: ${corSecundaria};
+  font-size: 1.875rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  @media (max-width: 360px) {
+    font-size: 1.65rem;
+  }
+`;

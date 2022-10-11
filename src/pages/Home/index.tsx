@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as E from "./styled";
 import Timer from "../../Components/Timer";
 import Logout from "../../Components/Logout";
@@ -14,6 +14,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function Home() {
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
+  const [fullName, setFullName] = useState<any>();
+
+  useEffect(() =>{
+    setTimeout(() =>{
+      setFullName(auth.currentUser?.displayName?.split(' ')[0]);
+    }, 1000)
+  },[])
 
   return (
     <>
@@ -51,7 +58,7 @@ function Home() {
           </E.Content>
         </E.Back>
         <E.Footer>
-          <h2>Welcome {user?.displayName}</h2>
+          <E.BemVindo>Bem-vindo(a), {fullName}</E.BemVindo>
           <E.TextFooter>
             Essa janela do navegador é usada para manter sua sessão de
             autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova

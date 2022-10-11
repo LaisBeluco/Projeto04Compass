@@ -15,7 +15,7 @@ export const TextTimer = styled.p`
   font-size: 0.875rem;
   line-height: 1.125rem;
   text-align: right;
-  width: 6.813rem;
+  width: 4.813rem;
   @media (max-width: 768px) {
   font-size: 0.75rem;
   }

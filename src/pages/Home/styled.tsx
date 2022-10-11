@@ -2,6 +2,7 @@ import styled from "styled-components";
 import LogoCompasso from "../../assets/LogoCompasso.svg";
 import Temperatura from "../../assets/temperatura.png";
 import ballCompass from "../../assets/bolaCompass.svg";
+import { corPrimaria } from "../../Components/UI/variaveis";
 
 export const Back = styled.div`
   /* height: 100vh; */
@@ -186,9 +187,11 @@ export const TextFooter = styled.p`
   width: 33.813rem;
   padding-right: 2.188rem;
   border-right: 1px solid #ffffff;
-  margin-left: 3%;
+  /* margin-left: 2%; */
   @media (max-width: 768px) {
     font-size: 0.6rem;
+    padding-right: 1rem;
+    width: 20rem;
   }
   @media (max-width: 700px) {
     flex-wrap: wrap;
@@ -207,5 +210,29 @@ export const TextFooter = styled.p`
   }
   @media (max-width: 320px) {
     font-size: 0.58rem;
+  }
+`;
+
+export const BemVindo = styled.h2`
+  color: ${corPrimaria};
+  font-size: 1.5rem;
+  margin: 1% 3%;
+  padding-right: 2%;
+  border-right: 1px solid ${corPrimaria};
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 1rem;
+    text-align: right;
+  }
+  @media(max-width: 425px){
+    border-bottom: 1px solid ${corPrimaria};
+    border-right:none;
+    padding: 2.5% 0;
+
+  }
+  @media (max-width: 320px) {
+    font-size: 1rem;
   }
 `;
