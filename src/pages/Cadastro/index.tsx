@@ -11,24 +11,18 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   onAuthStateChanged,
-  getAuth
+  getAuth,
 } from "firebase/auth";
 import { auth } from "../../firebase";
+import { Button } from "../../Components/UI";
+import { ImgPc } from "../Login/styled";
+import mask from "../../assets/mask.png";
+import { ReistrationTexLogin } from "../Registration/styled";
+import "./Cadastro.css";
 
 export default function Cadastro() {
-  // const emailRef  = useRef()
-  // const passwordRef = useRef()
-  // const passwordConfirmRef = useRef()
-  // const { signup }:any = useAuth();
-
-  // function handleSubmit({ e }: any) {
-  //   e.preventDefault();
-
-  //   signup(emailRef.current.value, passwordRef.current.value);
-  // }
   var userNow = auth.currentUser;
-
-  // updateProfile(userNow, {displayName: "teste"})
+  const [NoValidated, setNoValidated] = useState(Boolean);
   const [updateProfile, updating, error] = useUpdateProfile(auth);
   const register = async (value: any) => {
     console.log(value);
@@ -39,7 +33,7 @@ export default function Cadastro() {
         value.email,
         value.password
       );
-      
+
       await updateProfile({ displayName: value.registerName });
       console.log(user.user.displayName);
     } catch {
@@ -64,152 +58,171 @@ export default function Cadastro() {
   // })
 
   return (
-    <div className="container">
-      <Formik<FormModel>
-        validationSchema={object({
-          registerName: yup.string().min(2, "Too short").required("Required"),
-          lastname: yup.string().required("Campo obrigatório"),
-          email: yup
-            .string()
-            .email("Por favor, coloque um e-mail valido")
-            .required("*"),
-          confirmEmail: yup
-            .string()
-            .oneOf([yup.ref("email"), null], "Os e-mails tem que ser iguais")
-            .required("*"),
-          password: yup
-            .string()
-            .min(6)
+    <E.Fundo>
+      <E.ContainerLogin>
+        <E.Cadastro>
+          <ReistrationTexLogin>Cadastre-se</ReistrationTexLogin>
+          <Formik<FormModel>
+            validationSchema={object({
+              registerName: yup.string().required("Campo obrigatório"),
+              lastname: yup.string().required("Campo obrigatório"),
+              email: yup
+                .string()
+                .email("Por favor, coloque um e-mail válido")
+                .required("Campo obrigatório"),
+              confirmEmail: yup
+                .string()
+                .oneOf([yup.ref("email"), null], "Os e-mails devem ser iguais")
+                .required("Campo obrigatório"),
+              password: yup
+                .string()
+                .min(6)
 
-            .required("*"),
-          confirmPassword: yup
-            .string()
-            .oneOf([yup.ref("password"), null], "As senhas tem que ser iguais")
-            .required("*"),
-        })}
-        initialValues={{
-          registerName: "",
-          lastname: "",
-          email: "",
-          confirmEmail: "",
-          password: "",
-          confirmPassword: "",
-        }}
-        onSubmit={(values) => {
-          console.log(values.registerName);
-          register(values);
-        }}
-      >
-        {({ handleSubmit, values, handleBlur, handleChange }) => (
-          <form onSubmit={handleSubmit} className="cadastro-form">
-            <div className="cadastro-form-group">
-              <label htmlFor="registerName">Nome:</label>
-              <input
-                type="text"
-                name="registerName"
-                className="form-fiel"
-                placeholder="Nome"
-                value={values.registerName}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="registerName"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <div className="cadastro-form-group">
-              <label htmlFor="lastname">Sobrenome:</label>
-              <input
-                type="text"
-                name="lastname"
-                className="form-fiel"
-                placeholder="Sobrenome"
-                value={values.lastname}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="lastname"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <div className="cadastro-form-group">
-              <label htmlFor="email">E-mail:</label>
-              <input
-                type="text"
-                name="email"
-                className="form-fiel"
-                placeholder="E-mail"
-                value={values.email}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="email"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <div className="cadastro-form-group">
-              <label htmlFor="confirmEmail">Confirme seu E-mail:</label>
-              <input
-                type="text"
-                name="confirmEmail"
-                className="form-fiel"
-                placeholder="Confirme o E-mail"
-                value={values.confirmEmail}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="confirmEmail"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <div className="cadastro-form-group">
-              <label htmlFor="password">Senha:</label>
-              <input
-                type="password"
-                name="password"
-                className="form-fiel"
-                placeholder="Senha"
-                value={values.password}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="password"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <div className="cadastro-form-group">
-              <label htmlFor="confirmPassword">Confirme sua Senha:</label>
-              <input
-                type="password"
-                name="confirmPassword"
-                className="form-fiel"
-                placeholder="Confirme a Senha"
-                value={values.confirmPassword}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <ErrorMessage
-                name="confirmPassword"
-                className="cadastro-error"
-                component="span"
-              />
-            </div>
-            <button className="button" type="submit">
-              Cadastro
-            </button>
-          </form>
-        )}
-      </Formik>
-    </div>
+                .required("Campo obrigatório"),
+              confirmPassword: yup
+                .string()
+                .oneOf(
+                  [yup.ref("password"), null],
+                  "As senhas devem ser iguais"
+                )
+                .required("Campo obrigatório"),
+            })}
+            initialValues={{
+              registerName: "",
+              lastname: "",
+              email: "",
+              confirmEmail: "",
+              password: "",
+              confirmPassword: "",
+            }}
+            onSubmit={(values) => {
+              console.log(values.registerName);
+              register(values);
+            }}
+          >
+            {({ handleSubmit, values, handleBlur, handleChange }) => (
+              <form onSubmit={handleSubmit} className="cadastro-form">
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="registerName">Nome:</E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="text"
+                    name="registerName"
+                    className="form-fiel"
+                    placeholder="Nome"
+                    value={values.registerName}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+
+                  <ErrorMessage
+                    name="registerName"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="lastname">Sobrenome:</E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="text"
+                    name="lastname"
+                    className="form-fiel"
+                    placeholder="Sobrenome"
+                    value={values.lastname}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="lastname"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="email">E-mail:</E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="text"
+                    name="email"
+                    className="form-fiel"
+                    placeholder="E-mail"
+                    value={values.email}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="email"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="confirmEmail">Confirme seu E-mail:</E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="text"
+                    name="confirmEmail"
+                    className="form-fiel"
+                    placeholder="Confirme o E-mail"
+                    value={values.confirmEmail}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="confirmEmail"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="password">Senha:</E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="password"
+                    name="password"
+                    className="form-fiel"
+                    placeholder="Senha"
+                    value={values.password}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <E.ContainerInput>
+                  {/* <E.Label htmlFor="confirmPassword">
+                    Confirme sua Senha:
+                  </E.Label> */}
+                  <E.Input
+                    NoValidated={NoValidated}
+                    type="password"
+                    name="confirmPassword"
+                    className="form-fiel"
+                    placeholder="Confirme a Senha"
+                    value={values.confirmPassword}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="confirmPassword"
+                    className="cadastro-error"
+                    component="span"
+                  />
+                </E.ContainerInput>
+                <Button className="button" type="submit">
+                  Cadastro
+                </Button>
+              </form>
+            )}
+          </Formik>
+          <E.TextResgister>Caso possua cadastro, clique <E.LinkResgister href="http://localhost:3000">aqui</E.LinkResgister></E.TextResgister>
+        </E.Cadastro>
+        <ImgPc src={mask} />
+      </E.ContainerLogin>
+    </E.Fundo>
   );
 }

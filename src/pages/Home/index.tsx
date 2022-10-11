@@ -6,8 +6,12 @@ import { Day } from "../../Components/Day";
 import ballCompass from "../../assets/bolaCompass.svg";
 import Weader from "../../Components/Weather";
 import LogoCompassTest from "../../assets/logoCompassTeste.svg"
+import { auth } from "../../firebase";
+import { getAuth } from "firebase/auth";
 
 function Home() {
+  const user = getAuth();
+  console.log()
   return (
     <>
       <E.Test>
@@ -51,6 +55,7 @@ function Home() {
           </E.TextFooter>
           <Timer />
           <Logout />
+          
         </E.Footer>
       </E.Test>
     </>
