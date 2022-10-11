@@ -15,13 +15,16 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { Button } from "../../Components/UI";
-import { ImgPc } from "../Login/styled";
+import { ContainerLogoMobile, ImgLogoMobile, ImgPc } from "../Login/styled";
 import mask from "../../assets/mask.png";
 import { ReistrationTexLogin } from "../Registration/styled";
+import { useNavigate } from "react-router-dom";
 import "./Cadastro.css";
+import logoMobile from "../../assets/logoMobile.png";
 
 export default function Cadastro() {
   var userNow = auth.currentUser;
+  const navigate = useNavigate();
   const [NoValidated, setNoValidated] = useState(Boolean);
   const [updateProfile, updating, error] = useUpdateProfile(auth);
   const register = async (value: any) => {
@@ -36,6 +39,7 @@ export default function Cadastro() {
 
       await updateProfile({ displayName: value.registerName });
       console.log(user.user.displayName);
+      navigate("/")
     } catch {
       console.log("erro");
     }
@@ -60,6 +64,9 @@ export default function Cadastro() {
   return (
     <E.Fundo>
       <E.ContainerLogin>
+      <ContainerLogoMobile>
+          <ImgLogoMobile src={logoMobile} />
+        </ContainerLogoMobile>
         <E.Cadastro>
           <ReistrationTexLogin>Cadastre-se</ReistrationTexLogin>
           <Formik<FormModel>
@@ -70,10 +77,10 @@ export default function Cadastro() {
                 .string()
                 .email("Por favor, coloque um e-mail válido")
                 .required("Campo obrigatório"),
-              confirmEmail: yup
-                .string()
-                .oneOf([yup.ref("email"), null], "Os e-mails devem ser iguais")
-                .required("Campo obrigatório"),
+              // confirmEmail: yup
+              //   .string()
+              //   .oneOf([yup.ref("email"), null], "Os e-mails devem ser iguais")
+              //   .required("Campo obrigatório"),
               password: yup
                 .string()
                 .min(6)
@@ -157,9 +164,9 @@ export default function Cadastro() {
                     component="span"
                   />
                 </E.ContainerInput>
-                <E.ContainerInput>
+                {/* <E.ContainerInput>
                   {/* <E.Label htmlFor="confirmEmail">Confirme seu E-mail:</E.Label> */}
-                  <E.Input
+                  {/* <E.Input
                     NoValidated={NoValidated}
                     type="text"
                     name="confirmEmail"
@@ -168,13 +175,13 @@ export default function Cadastro() {
                     value={values.confirmEmail}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                  />
-                  <ErrorMessage
+                  /> */}
+                  {/* <ErrorMessage
                     name="confirmEmail"
                     className="cadastro-error"
                     component="span"
-                  />
-                </E.ContainerInput>
+                  /> */}
+                {/* </E.ContainerInput> */}
                 <E.ContainerInput>
                   {/* <E.Label htmlFor="password">Senha:</E.Label> */}
                   <E.Input
@@ -202,7 +209,7 @@ export default function Cadastro() {
                     type="password"
                     name="confirmPassword"
                     className="form-fiel"
-                    placeholder="Confirme a Senha"
+                    placeholder="Confirme sua Senha"
                     value={values.confirmPassword}
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -214,7 +221,7 @@ export default function Cadastro() {
                   />
                 </E.ContainerInput>
                 <Button className="button" type="submit">
-                  Cadastro
+                  Cadastre-se
                 </Button>
               </form>
             )}

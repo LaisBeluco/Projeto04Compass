@@ -92,7 +92,7 @@ export default function Form() {
           id="email"
           name="email"
           required
-          placeholder="Usuário"
+          placeholder="E-mail"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);

@@ -28,8 +28,11 @@ export const Nav = styled.a`
   }
 `;
 
-export const LogOut = styled.a`
+export const LogOut = styled.button`
   text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;

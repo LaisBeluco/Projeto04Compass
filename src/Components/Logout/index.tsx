@@ -1,7 +1,14 @@
 import React from "react";
 import * as E from "./styled";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
+  const navigate = useNavigate();
+  const signOutClick = () => {
+    auth.signOut();
+    navigate("/");
+  };
   return (
     <>
       <E.ContainerLog>
@@ -10,7 +17,7 @@ export default function Logout() {
             Continuar <br /> Navegando
           </E.Nav>
         </E.BlockLog>
-        <E.LogOut href="http://localhost:3000/">Logout</E.LogOut>
+        <E.LogOut onClick={() => signOutClick()}>Logout</E.LogOut>
       </E.ContainerLog>
     </>
   );

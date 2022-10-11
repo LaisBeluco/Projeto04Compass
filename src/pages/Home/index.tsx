@@ -9,27 +9,12 @@ import LogoCompassTest from "../../assets/logoCompassTeste.svg";
 import { auth } from "../../firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Home() {
   const navigate = useNavigate();
-  // const logout = async () => {
-  //   const auth = getAuth();
-  //   try {
-  //     const logon = await signInWithEmailAndPassword(auth, );
-  //     console.log(logon, " entrou");
-  //     navigate("/home");
-  //   } catch {
-  //     console.log("erro");
-  //     setNoValidated(true);
-  //   }
-  // };
-  // const logout = async () => {
-  //   const a = getAuth();
-  //   const def = (() => {
-  //     a.currentUser?.displayName;
-  //   })
-  //   console.log(def);
-  // };
+  const [user, loading, error] = useAuthState(auth);
+
   return (
     <>
       <E.Test>
@@ -66,6 +51,7 @@ function Home() {
           </E.Content>
         </E.Back>
         <E.Footer>
+          <h2>Welcome {user?.displayName}</h2>
           <E.TextFooter>
             Essa janela do navegador é usada para manter sua sessão de
             autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova

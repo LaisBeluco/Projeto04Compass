@@ -4,6 +4,7 @@ import Form from "../../Components/Form";
 import mask from "../../assets/mask.png";
 import logoMobile from "../../assets/logoMobile.png";
 import { Button } from "../../Components/UI";
+import { LinkResgister, TextResgister } from "../Cadastro/styled";
 
 export function Login() {
   return (
@@ -20,6 +21,7 @@ export function Login() {
             </E.Text>
           </E.Welcome>
           <Form />
+          <TextResgister>Caso não possua cadastro, clique <LinkResgister href="http://localhost:3000/cadastro">aqui</LinkResgister></TextResgister>
         </E.Cadastro>
         <E.ImgPc src={mask} />
       </E.ContainerLogin>
